@@ -8,6 +8,7 @@ namespace Organitzador
 {
     class Llibre
     {
+
         public string Titol { get; set; }
         public string Autor { get; set; }
 
