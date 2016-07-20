@@ -5,8 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Organitzador"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="694.043" Width="1351.596">
     <Grid>
-        
+        <Menu x:Name="menu" Height="37" VerticalAlignment="Top">
+            <MenuItem Header="Menú" Height="37" Width="50">
+                <MenuItem Header="Nou Llibre" />
+                <MenuItem x:Name="menuItem_nouLlibreVirtual" Header="Nou Llibre Virtual" Click="menuItem_nouLlibreVirtual_Click"/>
+                <MenuItem Header="Nova Revista"/>
+            </MenuItem>
+            <MenuItem Header="Ajuda" Height="37" Width="90"></MenuItem>
+        </Menu>
+
+        <Grid Margin="0,42,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="200*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="10,0,0,10">
+                <DataGrid x:Name="dataGrid" Margin="0,0,10,148">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn MinWidth="100" Header="Codi" Binding="{Binding Client_CIF }" />
+                        <DataGridTextColumn MinWidth="100" Header="Autor" Binding="{Binding client.nom}"/>
+                        <DataGridTextColumn MinWidth="100" Header="Titol" Binding="{Binding dataComanda, StringFormat={}{0:dd.MM.yyyy}}"/>
+                        <DataGridTextColumn MinWidth="100" Header="Llegit" Binding="{Binding dataComanda, StringFormat={}{0:dd.MM.yyyy}}"/>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+                <Label x:Name="label_Copy4" Content="Categoria:" HorizontalAlignment="Left" Margin="0,0,0,97" VerticalAlignment="Bottom" Height="32" Width="90" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="32" Margin="95,0,0,97" VerticalAlignment="Bottom" Width="218"/>
+                <GroupBox x:Name="groupBox" Header="Filtres Avançats" Margin="0,0,10,0" Height="143" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="451"/>
+            </Grid>
+
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" />
+
+            <Grid Grid.Column="2" Margin="0,0,10,10">
+
+                <Grid Margin="0,0,0,137">
+
+                    <Label x:Name="label" Content="Titol:" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Height="32" Width="90" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="label_Copy" Content="Autor:" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Height="32" Width="90" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="label_Copy1" Content="Editorial:" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Height="32" Width="90" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="label_Copy2" Content="Codi:" HorizontalAlignment="Right" Margin="0,10,133,0" VerticalAlignment="Top" Height="32" Width="90" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+
+                    <TextBox x:Name="textBox" Height="32" Margin="0,10,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right" Width="118"/>
+                    <TextBox x:Name="textBox_Copy" Height="31" Margin="105,65,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="textBox_Copy1" Height="32" Margin="105,110,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="textBox_Copy2" Height="30" Margin="105,182,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="textBox_Copy3" Margin="105,219,10,10" TextWrapping="Wrap" Text="TextBox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+
+                </Grid>
+
+                <Grid Margin="0,0,0,43" Height="57" VerticalAlignment="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="button" Content="Editar" Margin="10,10,10,8" Grid.Column="2"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
     </Grid>
 </Window>

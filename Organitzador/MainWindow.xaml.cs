@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Organitzador.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace Organitzador
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void menuItem_nouLlibreVirtual_Click(object sender, RoutedEventArgs e)
+        {
+            NouLlibreVirtualWindow nouLlibreVirtualWindow = new NouLlibreVirtualWindow();
+            nouLlibreVirtualWindow.ShowDialog();
         }
     }
 }
